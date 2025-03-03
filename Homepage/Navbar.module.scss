@@ -1,0 +1,234 @@
+$dark-grey: var(--dark-grey);
+$white: var(--white);
+$light-slate-gray: var(--light-slate-gray);
+$charcoal: var(--charcoal);
+$slate-gray: var(--slate-gray);
+$bit-blue: var(--bit-blue);
+$hover-blue: var(--hover-blue);
+$dim-gray: var(--dim-gray);
+$dim-white: var(--dim-white);
+$transition-speed: var(--transition-speed);
+
+// Base styles
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $dark-grey;
+  height: 80px;
+  color: $white;
+  padding: 0 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+
+  // Global link and span styles
+  span, a {
+    cursor: pointer;
+    text-decoration: none;
+    color: $white;
+    transition: color $transition-speed ease;
+
+    &:hover {
+      color: $light-slate-gray;
+    }
+  }
+}
+
+// Left Side
+.left-side {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  @media (max-width: 768px) {
+    gap: 20px;
+  }
+}
+
+.store {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+}
+
+// Right Side
+.right-side {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    gap: 10px;
+  }
+}
+
+// Logo
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  @media (max-width: 768px) {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+// Button Styles
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: $charcoal;
+  color: $white;
+  cursor: pointer;
+  transition: background-color $transition-speed ease;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+
+  &:hover {
+    background-color: $slate-gray;
+  }
+}
+
+.sign-in-btn {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid $white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  color: $white;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color $transition-speed ease, color $transition-speed ease;
+
+  &:hover {
+    background-color: $white;
+    color: $dark-grey;
+  }
+
+  @media (max-width: 768px) {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+
+// Download Button
+.download-btn {
+  background-color: $bit-blue;
+  font-weight: bold;
+  margin-right: 50px;
+
+  &:hover {
+    background-color: $hover-blue;
+  }
+
+  @media (max-width: 768px) {
+    margin-right: 20px;
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+
+// Dropdown Styling
+.dropdown {
+  position: relative;
+
+  .dropdown-toggle {
+    font-size: 16px;
+    text-decoration: none;
+    color: $white;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: color $transition-speed ease;
+
+    &:hover {
+      color: $light-slate-gray;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      padding: 8px 12px;
+    }
+  }
+
+  .dropdown-lists {
+    position: absolute;
+    left: 0;
+    background-color: $dim-gray;
+    border: 1px solid $dim-white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $transition-speed ease, visibility $transition-speed ease;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    li {
+      padding: 10px 16px;
+      cursor: pointer;
+      transition: background-color $transition-speed ease, color $transition-speed ease;
+
+      &:hover {
+        background-color: $light-slate-gray;
+        color: $dark-grey;
+      }
+
+      @media (max-width: 768px) {
+        padding: 8px 12px;
+      }
+    }
+  }
+
+  &:hover .dropdown-lists {
+    opacity: 1;
+    visibility: visible;
+    top: 32px;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 1rem;
+    height: 60px;
+  }
+
+  .left-side, .right-side {
+    gap: 10px;
+  }
+
+  .store {
+    font-size: 20px;
+  }
+
+  .logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .sign-in-btn, .download-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .dropdown-toggle {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .dropdown-lists li {
+    padding: 8px 12px;
+  }
+}

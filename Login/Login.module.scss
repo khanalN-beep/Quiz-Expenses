@@ -1,0 +1,117 @@
+// Root Variables
+// :root {
+    // --dark-grey: #121212;
+    // --bg-dark: rgba(30, 30, 30, 0.7); // Glassmorphism Effect
+    // --bg-light: #2a2a2a; // Input field background
+    // --text-color: #ffffff;
+    // --primary-color: #ffffff; // Button background
+    // --primary-hover: #cccccc; // Button hover effect
+    // --border-color: #4b5563; // Slate grey border
+  // }
+
+.loginPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--dark-grey);
+  color: var(--text-color);
+
+  .loginContainer {
+    background: var(--bg-dark);
+    backdrop-filter: blur(10px); // Glassmorphism effect
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    text-align: center;
+
+    .loginForm {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .inputGroup {
+        display: flex;
+        flex-direction: column;
+
+        input {
+          padding: 12px;
+          width: 91%;
+          border-radius: 5px;
+          border: none;
+          background-color: var(--bg-light);
+          color: var(--text-color);
+          outline: none;
+          font-size: 16px;
+          padding: 12px;
+        }
+
+        input::placeholder {
+          color: rgba(255, 255, 255, 0.7);
+        }
+      }
+
+      .loginButton {
+        width: 100%;
+        background-color: var(--primary-color);
+        color: black;
+        font-weight: bold;
+        padding: 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        border: none;
+
+        &:hover {
+          background-color: var(--primary-hover);
+          transform: scale(1.05);
+        }
+      }
+
+      .forgotPassword {
+        text-align: center;
+        margin-top: 10px;
+
+        a {
+          color: var(--text-color);
+          text-decoration: none;
+          font-size: 14px;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: rgba(255, 255, 255, 0.7);
+          }
+        }
+      }
+
+      .createAccount {
+        text-align: center;
+        margin-top: 15px;
+        padding: 10px;
+        background-color: var(--primary-color);
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+
+        a {
+          color: black;
+          font-weight: bold;
+          text-decoration: none;
+        }
+
+        &:hover {
+          background-color: var(--primary-hover);
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 400px) {
+  .loginContainer {
+    width: 90%;
+  }
+}

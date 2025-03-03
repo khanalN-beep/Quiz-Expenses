@@ -1,0 +1,198 @@
+:root {
+  --bg-dark: #0a0a0a;
+  --text-color: #ffffff;
+  --text-secondary: #8a8a8a;
+  --card-bg: rgba(30, 30, 30, 0.6);
+  --hover-bg: rgba(50, 50, 50, 0.6);
+  --nav-button-bg: rgba(50, 50, 50, 0.8);
+  --nav-button-hover: rgba(70, 70, 70, 0.8);
+  --add-button-bg: rgba(255, 255, 255, 0.15);
+  --add-button-hover: rgba(255, 255, 255, 0.25);
+}
+
+.discoverSection {
+  background-color: var(--bg-dark);
+  color: var(--text-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 40px 24px;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 30px 16px;
+  }
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 16px;
+  }
+}
+
+.sectionTitle {
+  font-size: 22px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  margin: 0;
+
+  .headerArrow {
+    margin-left: 8px;
+    font-size: 24px;
+    font-weight: 300;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+
+    .headerArrow {
+      font-size: 22px;
+    }
+  }
+}
+
+.navButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.navArrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--nav-button-bg);
+  border: none;
+  color: var(--text-color);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--nav-button-hover);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @media (max-width: 768px) {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+}
+
+.gameSlider {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; // Firefox
+  padding: 4px;
+  margin: 0 -4px;
+  cursor: pointer;
+
+  &::-webkit-scrollbar {
+    display: none; // Chrome, Safari, Edge
+  }
+
+  @media (max-width: 768px) {
+    gap: 12px;
+  }
+}
+
+.gameCard {
+  flex-shrink: 0;
+  width: 300px;
+  transition: transform 0.3s ease;
+
+  @media (max-width: 768px) {
+    width: 180px;
+  }
+
+  .imageContainer {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    aspect-ratio: 16/9;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .addButton {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--add-button-bg);
+      border: none;
+      color: white;
+      font-size: 18px;
+      font-weight: 300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      backdrop-filter: blur(2px);
+
+      &:hover {
+        background: var(--add-button-hover);
+      }
+    }
+  }
+
+  &:hover {
+    transform: scale(1.02);
+
+    .imageContainer img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.gameInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gameType {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.gameTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+.gamePrice {
+  font-size: 15px;
+  font-weight: 500;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+}
